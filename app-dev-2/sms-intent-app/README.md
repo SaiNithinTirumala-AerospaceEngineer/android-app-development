@@ -9,100 +9,73 @@
 ## Problem statement
 
 Demonstrates Android's Intent system by building an SMS sending
-application that allows users to compose and send SMS messages through
-the device's default messaging application. Uses `Intent.ACTION_VIEW`
-with a `smsto:` URI to pre-fill the recipient and message body.
+application that pre-fills the device's default messaging app with
+a recipient phone number and message body. Two versions are maintained:
+v1 (original course submission) and v2 (enhanced with validation).
 
 ---
 
-## Features
+## Version comparison
 
-- Phone number input with format validation
-- Multi-line message composition field
-- Input validation with inline error messages
-- Clear button to reset all fields
-- Resolves default SMS app availability before firing Intent
-- Exception handling for devices without SMS capability
-
----
-
-## App screenshots
-
-| Empty state | Number entered | Message composed | SMS app opened |
-|---|---|---|---|
-| ![Empty](screenshots/sms_empty.png) | ![Number](screenshots/sms_number.png) | ![Message](screenshots/sms_message.png) | ![Sent](screenshots/sms_sent.png) |
+| Feature | v1 — Original | v2 — Enhanced |
+|---|---|---|
+| Intent firing | ✅ | ✅ |
+| Input validation | ❌ | ✅ Regex + empty check |
+| Clear button | ❌ | ✅ |
+| SMS app availability check | ❌ | ✅ resolveActivity() |
+| Exception handling | ❌ | ✅ |
+| Full Gradle project | ❌ Source only | ✅ Runnable in Android Studio |
 
 ---
 
-## How it works
+## v1 — Original course submission
 
-```
-User enters phone number + message
-            │
-            ▼
-    Input validation
-            │
-            ▼
-    Intent(ACTION_VIEW)
-    URI: smsto:<phoneNumber>
-    Extra: sms_body = <message>
-            │
-            ▼
-    Android routes to default SMS app
-    (pre-filled with number + message)
-            │
-            ▼
-    User confirms and sends
+Source code from the App Development 2 project report (2022–23).
+Three files reconstructed from the submitted report.
+
+### Screenshots — real device demonstration
+
+| UI | Phone number entered | Message composed |
+|---|---|---|
+| ![UI](screenshots/v1/sms_ui.png) | ![Num](screenshots/v1/sms_number.png) | ![Msg](screenshots/v1/sms_message.png) |
+
+### How it works
+
+```java
+Intent smsIntent = new Intent(Intent.ACTION_VIEW);
+smsIntent.setData(Uri.parse("smsto:" + phoneNumber));
+smsIntent.putExtra("sms_body", message);
+startActivity(smsIntent);
 ```
 
 ---
 
-## Project structure
+## v2 — Enhanced Android Studio project
 
-```
-sms-intent-app/
-├── app/src/main/
-│   ├── java/com/mrcet/smsapp/
-│   │   └── MainActivity.java     ← Core intent logic + validation
-│   ├── res/layout/
-│   │   └── activity_main.xml     ← UI layout
-│   └── AndroidManifest.xml       ← SEND_SMS permission
-└── screenshots/                  ← App running on real device
-```
+Full runnable Android Studio project with all Gradle files,
+resource files, and enhanced features.
 
----
+### Screenshots — emulator run
 
-## How to open in Android Studio
+| UI | Validation | SMS app launched |
+|---|---|---|
+| ![UI](screenshots/v2/sms_ui.png) | ![Val](screenshots/v2/sms_validation.png) | ![Sent](screenshots/v2/sms_sent.png) |
 
-1. Open Android Studio
-2. File → Open → select `sms-intent-app/` folder
-3. Wait for Gradle sync to complete
-4. Connect device or start emulator
-5. Click Run ▶
+### Enhancements over v1
 
-**Minimum SDK:** API 21 (Android 5.0 Lollipop)
-**Target SDK:** API 33 (Android 13)
-**Language:** Java
-
----
-
-## Key concepts demonstrated
-
-- **Android Intent system** — inter-app communication via intents
-- **URI scheme** — `smsto:` URI for SMS pre-fill
-- **Input validation** — regex-based phone number check
-- **Activity lifecycle** — `onCreate()`, `setContentView()`
-- **View binding** — `findViewById()` pattern
-- **AndroidManifest** — permission declaration
-
----
-
-## Enhancement over original submission
-
-The original course submission (documented in `docs/`) implemented
-the basic `sendSms()` method. This enhanced version adds:
-- Phone number format validation (regex)
-- Empty field detection with inline errors
-- Clear button
-- SMS app availability check before intent
+- Phone number regex validation: `[+\d\s\-()] 7–15 chars`
+- Inline EditText error messages for empty/invalid fields
+- `resolveActivity()` check before firing intent
+- Clear button with Toast confirmation
 - Exception handling with user feedback
+
+---
+
+## How to open v2 in Android Studio
+
+1. File → Open → select `v2-enhanced/` folder
+2. Wait for Gradle sync
+3. Run on device or emulator (API 23+)
+
+**Permission required:** `android.permission.SEND_SMS`
+**Language:** Java · **Min SDK:** API 23

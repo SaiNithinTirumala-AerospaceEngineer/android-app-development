@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Calculator" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">#FF9500</item>
+        <item name="android:windowBackground">#1C1C1E</item>
+    </style>
+
+    <style name="CalcBtnBase">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:layout_margin">2dp</item>
+    </style>
+
+    <style name="CalcBtnDark" parent="CalcBtnBase">
+        <item name="android:backgroundTint">#2C2C2E</item>
+    </style>
+
+    <style name="CalcBtnOrange" parent="CalcBtnBase">
+        <item name="android:backgroundTint">#FF9500</item>
+    </style>
+
+    <style name="CalcBtnGray" parent="CalcBtnBase">
+        <item name="android:backgroundTint">#636366</item>
+    </style>
+</resources>
