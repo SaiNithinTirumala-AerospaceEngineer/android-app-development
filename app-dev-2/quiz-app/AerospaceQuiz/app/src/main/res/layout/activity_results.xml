@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp"
+    android:background="#1C1C1E">
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Quiz Complete!" android:textSize="28sp"
+        android:textStyle="bold" android:textColor="#FFFFFF"
+        android:gravity="center" android:layout_marginBottom="32dp"/>
+
+    <TextView android:id="@+id/tv_final_score"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:textSize="52sp" android:textStyle="bold"
+        android:textColor="#0A84FF" android:gravity="center"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView android:id="@+id/tv_percentage"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:textSize="32sp" android:textColor="#34C759"
+        android:gravity="center" android:layout_marginBottom="8dp"/>
+
+    <TextView android:id="@+id/tv_grade"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:textSize="20sp" android:textColor="#FFD60A"
+        android:gravity="center" android:layout_marginBottom="24dp"/>
+
+    <TextView android:id="@+id/tv_breakdown"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:textSize="14sp" android:textColor="#8E8E93"
+        android:gravity="center" android:layout_marginBottom="48dp"/>
+
+    <Button android:id="@+id/btn_restart"
+        android:layout_width="match_parent" android:layout_height="52dp"
+        android:text="PLAY AGAIN" android:textSize="16sp"
+        android:textStyle="bold" android:textColor="#FFFFFF"
+        android:backgroundTint="#0A84FF" android:layout_marginBottom="12dp"/>
+
+    <Button android:id="@+id/btn_exit"
+        android:layout_width="match_parent" android:layout_height="48dp"
+        android:text="EXIT" android:textSize="15sp"
+        android:textColor="#0A84FF" android:backgroundTint="#2C2C2E"/>
+</LinearLayout>
