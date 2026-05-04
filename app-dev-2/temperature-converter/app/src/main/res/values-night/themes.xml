@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.TempConverter" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">#FF9500</item>
+        <item name="android:windowBackground">#1C1C1E</item>
+    </style>
+</resources>
