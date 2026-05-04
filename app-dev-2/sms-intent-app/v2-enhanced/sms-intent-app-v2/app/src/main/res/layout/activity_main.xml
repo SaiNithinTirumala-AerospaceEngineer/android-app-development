@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#FAFAFA">
+
+    <!-- App title -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SMS Sender"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#1A1A2E"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send a message using Android Intent"
+        android:textSize="14sp"
+        android:textColor="#666666"
+        android:layout_marginBottom="32dp"/>
+
+    <!-- Phone number label -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recipient Phone Number"
+        android:textSize="13sp"
+        android:textColor="#333333"
+        android:textStyle="bold"
+        android:layout_marginBottom="6dp"/>
+
+    <!-- Phone number input -->
+    <EditText
+        android:id="@+id/phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="e.g. +91 98765 43210"
+        android:inputType="phone"
+        android:padding="14dp"
+        android:background="@drawable/edit_text_bg"
+        android:textSize="16sp"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Message label -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Message"
+        android:textSize="13sp"
+        android:textColor="#333333"
+        android:textStyle="bold"
+        android:layout_marginBottom="6dp"/>
+
+    <!-- Message input -->
+    <EditText
+        android:id="@+id/message"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:hint="Type your message here..."
+        android:inputType="textMultiLine"
+        android:gravity="top"
+        android:padding="14dp"
+        android:background="@drawable/edit_text_bg"
+        android:textSize="15sp"
+        android:layout_marginBottom="32dp"/>
+
+    <!-- Send SMS button -->
+    <Button
+        android:id="@+id/send_sms"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:text="SEND SMS"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#6200EE"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Clear button -->
+    <Button
+        android:id="@+id/clear_fields"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="CLEAR"
+        android:textSize="15sp"
+        android:textColor="#6200EE"
+        android:backgroundTint="#FFFFFF"
+        android:layout_marginBottom="32dp"/>
+
+    <!-- Info note -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="This app uses Android Intent to open your default SMS application with the recipient and message pre-filled."
+        android:textSize="12sp"
+        android:textColor="#888888"
+        android:lineSpacingExtra="4dp"/>
+
+</LinearLayout>
